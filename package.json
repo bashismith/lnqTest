@@ -4,7 +4,9 @@
   "description": "LNQ Landing",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/server.js",
+    "client": "node start-client.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,5 +17,8 @@
     "express": "^4.17.2",
     "nodemon": "^2.0.15",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1"
   }
 }
