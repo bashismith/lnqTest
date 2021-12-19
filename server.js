@@ -5,6 +5,10 @@ const path = require('path');
 const request = require('request');
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
+//serve static files
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 // body parser
 app.use(express.json());
