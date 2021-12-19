@@ -1,0 +1,19 @@
+{
+  "name": "lnqfinal",
+  "version": "1.0.0",
+  "description": "LNQ Landing",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.72",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "request": "^2.88.2"
+  }
+}

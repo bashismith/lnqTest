@@ -1,0 +1,310 @@
+
+@font-face {
+  font-family: "LNQ";
+  src: url("/LNQ.woff") format('woff');
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: #0155fd;
+  font-family: LNQ;
+  overflow-y: hidden;
+}
+
+/* start modal style */
+.overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #0155fd;
+  color: white;
+}
+
+/* nav bar styles */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8vh;
+}
+#lnq {
+  grid-area: lnq;
+  justify-self: center;
+  align-self: center;
+  text-decoration: none;
+  font-size: 60px;
+  margin-top: 20px;
+}
+#about {
+  grid-area: about;
+  justify-self: center;
+  align-self: center;
+  text-decoration: none;
+}
+#slabsNav {
+  grid-area: slabsNav;
+  justify-self: center;
+  align-self: center;
+  text-decoration: none;
+}
+a{
+  color: #ffffff;
+}
+a:hover{
+  color:rgb(204, 204, 204);
+}
+
+/* timer page styles */
+.timerDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  align-items: center;
+  font-size: 180px;
+  line-height: 0.7;
+  font-family: "LNQ";
+  color: white;
+  margin: 23vh 0;
+}
+.count{
+  font-size: 180px;
+  margin: 0;
+  padding: 0;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+		box-shadow: 0 0 0 0 rgb(144, 144, 146);
+	}
+
+	70% {
+    transform: scale(0.6);
+		box-shadow: 0 0 0 60px rgba(89, 123, 175, 0);
+	}
+
+	100% {
+    transform: scale(0.5);
+		box-shadow: 0 0 0 0 rgba(63, 62, 153, 0);
+	}
+}
+.tap {
+  animation: pulse 3s infinite;
+  background-color: #0155fd;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+/* join waitlist styles */
+.emailDiv {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  font-family: "LNQ";
+  color: white;
+  margin: 23vh 0;
+}
+.wearable{
+  font-size: 28px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.emailSignup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin-top: 550px;
+}
+.emailInput {
+  border-radius: 50px;
+  height: 30px;
+  width: 250px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0;
+  border-color: transparent;
+  outline: none;
+  border-style: none;
+  margin-bottom: 10px;
+  background-color: #0155fd;
+}
+.emailSubmit {
+  border-radius: 50px;
+  height: 30px;
+  width: 250px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: #0155fd;
+  border-style: none;
+  border: 1px solid white;
+}
+.emailSubmit:hover{
+  background-color:rgb(204, 204, 204);
+}
+::placeholder{
+  color: white;
+  font-weight: bold;
+}
+.emailFormTitle{
+  color: white;
+  font-size: 35px;
+  margin: 20px 0;
+}
+.backBtn{
+  font-size: 15px;
+  margin: 20px;
+}
+.backBtn:hover {
+  color:rgb(204, 204, 204);
+  cursor: pointer;
+}
+.submitMsg {
+  font-size: 32px;
+  margin-top: 80px;
+}
+
+/* footer styles */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+.insta {
+  filter: invert(100%) sepia(0%) saturate(7451%) hue-rotate(91deg) brightness(110%) contrast(112%);
+  margin: 0px 20px
+}
+.discord:hover {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(0%) saturate(13%) hue-rotate(97deg) brightness(102%) contrast(97%);
+}
+.insta:hover {
+  filter: invert(81%) sepia(0%) saturate(13%) hue-rotate(97deg) brightness(102%) contrast(97%);
+}
+.twitter:hover {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(0%) saturate(13%) hue-rotate(97deg) brightness(102%) contrast(97%);
+}
+
+/* media queries */
+@media (max-width:321px) {
+  .count{
+    font-size: 50px;
+  }
+  .wearable {
+    font-size: 15px;
+    margin-top: 40px;
+  }
+  #lnq {
+    font-size: 30px;
+  }
+}
+@media (max-width:376px) and (min-width: 321px) {
+  .count{
+    font-size: 60px;
+  }
+  .wearable {
+    font-size: 15px;
+    margin-top: 50px;
+  }
+  #lnq {
+    font-size: 40px;
+  }
+}
+@media (max-width:426px) and (min-width: 376px) {
+  .count{
+    font-size: 70px;
+  }
+  .wearable {
+    font-size: 20px;
+    margin-top: 60px;
+  }
+}
+@media (max-width:769px) and (min-width: 426px) {
+  .count{
+    font-size: 90px;
+  }
+  .wearable {
+    margin-top: 70px;
+  }
+}
+@media (max-width:1025px) and (min-width: 769px) {
+  .count{
+    font-size: 110px;
+  }
+  .wearable {
+    margin-top: 70px;
+  }
+}
+/* @media (max-width:1441px) and (min-width: 1024px) {
+  .emailFormTitle{
+    font-size: 45px;
+    margin: 30px 0;
+  }
+  .emailInput{
+    height: 35px;
+    width: 280px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .emailSubmit{
+    height: 35px;
+    width: 280px;
+    font-size: 18px;
+  }
+  .backBtn {
+    font-size: 20px;
+  }
+} */
+/* @media (max-width:2561px)  {
+  .count{
+    font-size: 220px;
+  }
+  .wearable {
+    font-size: 40px;
+    margin-top: 100px;
+  }
+  .emailFormTitle{
+    font-size: 80px;
+    margin: 80px 0;
+  }
+  .emailInput{
+    height: 50px;
+    width: 350px;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .emailSubmit{
+    height: 50px;
+    width: 350px;
+    font-size: 22px;
+  }
+  .backBtn {
+    font-size: 20px;
+  }
+} */
