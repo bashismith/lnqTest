@@ -1,5 +1,4 @@
 import React, {useState, useRef } from 'react';
-import mailchimp from '@mailchimp/mailchimp_marketing';
 import SignUpTap from '../sound/SignUpTap.mp3';
 import ErrorSound from '../sound/Error.mp3';
 
@@ -22,7 +21,7 @@ const EmailModal = ({setShowModal}) => {
       return
     }
 
-    fetch('/emailSubmit', {
+    fetch('/api/emailSubmit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

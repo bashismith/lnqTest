@@ -23,18 +23,25 @@ app.post('/emailSubmit', async (req,res) => {
       apiKey: process.env.API_KEY,
       server: "us20"
     })
-
+    
+    //health check
     async function run(){
       const response = await mailchimp.ping.get();
       console.log(response)
     }
     run()
 
-    const response = await mailchimp.lists.addListMember("ac3bfabd1e", {
-        email_address: email,
-        status: "subscribed",
-      });
-      res.status(200).json(response)
+    try{
+      const response = await mailchimp.lists.addListMember("ac3bfabd1e", {
+          email_address: email,
+          status: "subscribed",
+        });
+        console.log(JSON.stringify(response))
+        res.status(200).json(response)
+    }catch(err){
+      console.log(JSON.stringify(err))
+      res.status(400).json(err)
+    }
 });
 
 
