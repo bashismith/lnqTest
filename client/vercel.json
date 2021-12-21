@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "src": "/emailSubmit",
+      "dest": "/api/emailSubmit.js"
+    }
+  ]
+}

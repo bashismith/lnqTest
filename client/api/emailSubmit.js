@@ -1,5 +1,3 @@
-const express = require("express");
-const app = express();
 require('dotenv').config();
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
