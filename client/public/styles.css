@@ -238,7 +238,7 @@ footer {
 }
 @media (max-width:442px) and (min-width: 376px) {
   .count{
-    font-size: 70px;
+    font-size: 65px;
   }
   .wearable {
     font-size: 20px;
