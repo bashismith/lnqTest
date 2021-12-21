@@ -16,14 +16,14 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-app.post('/emailSubmit', async (req,res) => {
+app.post('/api/emailSubmit', async (req,res) => {
     const { email } = req.body;
 
     mailchimp.setConfig({
       apiKey: process.env.API_KEY,
       server: "us20"
     })
-    
+
     //health check
     async function run(){
       const response = await mailchimp.ping.get();

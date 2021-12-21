@@ -30,8 +30,7 @@ const EmailModal = ({setShowModal}) => {
     })
     .then((data) => JSON.stringify(data))
     .then((data) => {
-      setMCData(data.message)
-      console.log(mCData)
+      setMCData(data.status)
     });
 
     const tapBtn = new Audio(SignUpTap);
