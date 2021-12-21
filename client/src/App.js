@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Timer from './components/Timer';
 import EmailModal from'./components/EmailModal';
