@@ -236,7 +236,7 @@ footer {
     font-size: 40px;
   }
 }
-@media (max-width:426px) and (min-width: 376px) {
+@media (max-width:442px) and (min-width: 376px) {
   .count{
     font-size: 70px;
   }
@@ -245,7 +245,7 @@ footer {
     margin-top: 60px;
   }
 }
-@media (max-width:769px) and (min-width: 426px) {
+@media (max-width:769px) and (min-width: 442px) {
   .count{
     font-size: 78px;
   }

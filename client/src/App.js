@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Timer from './components/Timer';
 import EmailModal from'./components/EmailModal';
-import StartModal from './components/StartModal';
 import Footer from './components/Footer';
 import logo from './images/lnq-bluecircle.png';
 import Tap from './sound/Tap.mp3';
@@ -15,15 +14,14 @@ const App = () => {
   const [clicked, setClicked] = useState(false);
   const [music, setMusic] = useState(false);
 
+
   const ambient = new Audio(Ambient);
   ambient.volume = 0.3;
   ambient.loop = true;
   const enterClick = () => {
     ambient.play();
+    setMusic(true)
     setClicked(!clicked)
-  }
-  if(clicked) {
-    setInterval(ambient.play(), 120000)
   }
   const openModal = () => {
     const tapBtn = new Audio(Tap);

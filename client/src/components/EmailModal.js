@@ -1,6 +1,5 @@
 import React, {useState, useRef } from 'react';
 import SignUpTap from '../sound/SignUpTap.mp3';
-import mailchimp from '@mailchimp/mailchimp_marketing';
 
 
 
@@ -16,14 +15,17 @@ const EmailModal = ({setShowModal}) => {
     if (userEmail === '') return
 
     fetch('/emailSubmit', {
-      method: 'PUT',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: userEmail,
       }),
     })
     .then((data) => JSON.stringify(data))
-    .then((data) => setMCData(data.message));
+    .then((data) => {
+      setMCData(data.message)
+      console.log(mCData)
+    });
 
     const tapBtn = new Audio(SignUpTap);
     tapBtn.volume = 0.5;
