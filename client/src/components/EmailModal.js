@@ -16,7 +16,7 @@ const EmailModal = ({setShowModal}) => {
     if (userEmail === '') return
 
     fetch('/emailSubmit', {
-      method: 'POST',
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: userEmail,
@@ -24,7 +24,7 @@ const EmailModal = ({setShowModal}) => {
     })
     .then((data) => JSON.stringify(data))
     .then((data) => setMCData(data.message));
-    
+
     const tapBtn = new Audio(SignUpTap);
     tapBtn.volume = 0.5;
     tapBtn.play();
