@@ -1,8 +1,8 @@
 import React, {useState, useRef } from 'react';
+import mailchimp from '@mailchimp/mailchimp_marketing';
 import SignUpTap from '../sound/SignUpTap.mp3';
-
-
-
+import ErrorSound from '../sound/Error.mp3';
+import BackSound from '../sound/Back.mp3';
 
 const EmailModal = ({setShowModal}) => {
   const [mCData, setMCData] = useState(null);
@@ -12,7 +12,15 @@ const EmailModal = ({setShowModal}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const userEmail = emailRef.current.value
-    if (userEmail === '') return
+    const regexFormat = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+
+    const errSound = new Audio(ErrorSound);
+    errSound.volume = 0.5;
+
+    if (userEmail === '' || !regexFormat.test(userEmail)) {
+      errSound.play();
+      return
+    }
 
     fetch('/emailSubmit', {
       method: 'POST',
@@ -37,6 +45,9 @@ const EmailModal = ({setShowModal}) => {
     setTimeout(()=> setShowModal(prev => !prev), 2000)
   }
     const backClick = () => {
+      const backTap = new Audio(BackSound);
+      backTap.volume = 0.5;
+      backTap.play();
       setShowModal(prev => !prev)
   }
 
@@ -48,7 +59,7 @@ const EmailModal = ({setShowModal}) => {
       <>
       <h1 className='emailFormTitle'>Join the Waitlist.</h1>
       <form className='emailForm' onSubmit={handleSubmit}>
-        <input className='emailInput' ref={emailRef} type='email' placeholder='Your Email' required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autoComplete="off"></input>
+        <input className='emailInput' ref={emailRef} placeholder='Your Email' autoComplete="off"></input>
         <br></br>
         <input className='emailSubmit' type="Submit" value="Sign Up"></input>
       </form>
