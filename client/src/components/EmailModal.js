@@ -2,7 +2,7 @@ import React, {useState, useRef } from 'react';
 import mailchimp from '@mailchimp/mailchimp_marketing';
 import SignUpTap from '../sound/SignUpTap.mp3';
 import ErrorSound from '../sound/Error.mp3';
-import BackSound from '../sound/Back.mp3';
+
 
 const EmailModal = ({setShowModal}) => {
   const [mCData, setMCData] = useState(null);
@@ -45,9 +45,6 @@ const EmailModal = ({setShowModal}) => {
     setTimeout(()=> setShowModal(prev => !prev), 2000)
   }
     const backClick = () => {
-      const backTap = new Audio(BackSound);
-      backTap.volume = 0.5;
-      backTap.play();
       setShowModal(prev => !prev)
   }
 
