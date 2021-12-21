@@ -20,7 +20,7 @@ app.post('/emailSubmit', async (req,res) => {
     const { email } = req.body;
 
     mailchimp.setConfig({
-      apiKey: process.env.API_KEY,
+      apiKey: "ff45abeec9e297ce40e9264f55cd87ef-us20",
       server: "us20"
     })
 
