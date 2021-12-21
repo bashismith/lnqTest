@@ -2,7 +2,7 @@ const express = require("express");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const path = require('path');
-const request = require('request');
+require('dotenv').config();
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
 //serve static files
@@ -20,7 +20,7 @@ app.post('/emailSubmit', async (req,res) => {
     const { email } = req.body;
 
     mailchimp.setConfig({
-      apiKey: "3c60a19def8f22f28f39d8de62ca1d4a-us20",
+      apiKey: process.env.API_KEY,
       server: "us20"
     })
 

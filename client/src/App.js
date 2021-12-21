@@ -17,12 +17,13 @@ const App = () => {
 
   const ambient = new Audio(Ambient);
   ambient.volume = 0.3;
+  ambient.loop = true;
   const enterClick = () => {
     ambient.play();
     setClicked(!clicked)
   }
   if(clicked) {
-    setInterval(ambient.play(),120000)
+    setInterval(ambient.play(), 120000)
   }
   const openModal = () => {
     const tapBtn = new Audio(Tap);
