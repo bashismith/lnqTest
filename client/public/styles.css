@@ -124,7 +124,7 @@ a:hover{
   color: white;
   margin: 23vh 0;
 }
-.wearable{
+.wearable {
   font-size: 28px;
   margin-top: 80px;
   margin-bottom: 30px;
@@ -261,50 +261,159 @@ footer {
     margin-top: 70px;
   }
 }
-/* @media (max-width:1441px) and (min-width: 1024px) {
-  .emailFormTitle{
-    font-size: 45px;
-    margin: 30px 0;
-  }
-  .emailInput{
-    height: 35px;
-    width: 280px;
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  .emailSubmit{
-    height: 35px;
-    width: 280px;
-    font-size: 18px;
-  }
-  .backBtn {
-    font-size: 20px;
-  }
-} */
-/* @media (max-width:2561px)  {
-  .count{
-    font-size: 220px;
+@media (max-height: 530px) {
+  .tap{
+    height: 70px;
+    width: 70px;
   }
   .wearable {
-    font-size: 40px;
-    margin-top: 100px;
+    font-size: 15px;
+    margin-top: 40px;
+  }
+  .count{
+    font-size: 50px;
+  }
+}
+@media (max-height: 455px) {
+  .tap{
+    height: 50px;
+    width: 50px;
+  }
+  .wearable {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+}
+@media (max-height: 425px) {
+  .tap{
+    height: 40px;
+    width: 40px;
+  }
+  .wearable {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+  .timerDiv {
+    margin: 50px 0;
   }
   .emailFormTitle{
-    font-size: 80px;
+    font-size: 30px;
+    margin: 10px 0;
+  }
+  .emailDiv{
     margin: 80px 0;
   }
-  .emailInput{
-    height: 50px;
-    width: 350px;
-    font-size: 22px;
-    margin-bottom: 20px;
+}
+
+@media (max-height: 365px) {
+  .wearable {
+    font-size: 15px;
+    margin-top: 30px;
   }
-  .emailSubmit{
-    height: 50px;
-    width: 350px;
-    font-size: 22px;
+  .timerDiv {
+    margin: 30px 0;
   }
-  .backBtn {
+  #lnq{
+    font-size: 30px;
+    margin: 10px;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(0.5);
+      box-shadow: 0 0 0 0 rgb(144, 144, 146);
+    }
+
+    70% {
+      transform: scale(0.6);
+      box-shadow: 0 0 0 30px rgba(89, 123, 175, 0);
+    }
+
+    100% {
+      transform: scale(0.5);
+      box-shadow: 0 0 0 0 rgba(63, 62, 153, 0);
+    }
+  }
+  .emailFormTitle{
+    font-size: 25px;
+    margin: 10px 0;
+  }
+  .emailDiv{
+    margin: 40px 0;
+  }
+}
+@media (max-height: 320px) {
+  .emailFormTitle{
+    font-size: 25px;
+    margin: 10px 0;
+  }
+  .emailDiv{
+    margin: 25px 0;
+  }
+}
+@media (max-height: 290px) {
+  .wearable {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  .timerDiv {
+    margin: 20px 0;
+  }
+  #lnq{
     font-size: 20px;
+    margin: 10px;
   }
-} */
+  @keyframes pulse {
+    0% {
+      transform: scale(0.5);
+      box-shadow: 0 0 0 0 rgb(144, 144, 146);
+    }
+
+    70% {
+      transform: scale(0.6);
+      box-shadow: 0 0 0 20px rgba(89, 123, 175, 0);
+    }
+
+    100% {
+      transform: scale(0.5);
+      box-shadow: 0 0 0 0 rgba(63, 62, 153, 0);
+    }
+  }
+  .emailFormTitle{
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  .emailDiv{
+    margin: 10px 0;
+  }
+}
+@media (max-height: 258px) {
+  .wearable {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .timerDiv {
+    margin: 20px 0;
+  }
+  #lnq{
+    font-size: 20px;
+    margin: 10px;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(0.5);
+      box-shadow: 0 0 0 0 rgb(144, 144, 146);
+    }
+
+    70% {
+      transform: scale(0.6);
+      box-shadow: 0 0 0 20px rgba(89, 123, 175, 0);
+    }
+
+    100% {
+      transform: scale(0.5);
+      box-shadow: 0 0 0 0 rgba(63, 62, 153, 0);
+    }
+  }
+}
+

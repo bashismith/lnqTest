@@ -3,11 +3,11 @@ import SignUpTap from '../sound/SignUpTap.mp3';
 
 
 
+
 const EmailModal = ({setShowModal}) => {
   const [mCData, setMCData] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const emailRef = useRef();
-
 
   const handleSubmit = (e) => {
     e.preventDefault()
