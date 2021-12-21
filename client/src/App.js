@@ -1,9 +1,8 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Timer from './components/Timer';
 import EmailModal from'./components/EmailModal';
 import StartModal from './components/StartModal';
-import LogoModal from './components/LogoModal';
 import Footer from './components/Footer';
 import logo from './images/lnq-bluecircle.png';
 import Tap from './sound/Tap.mp3';
@@ -14,11 +13,16 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState(null);
   const [clicked, setClicked] = useState(false);
-  const modalClick = () => {
-    const ambient = new Audio(Ambient);
-    ambient.volume = 0.3;
+  const [music, setMusic] = useState(false);
+
+  const ambient = new Audio(Ambient);
+  ambient.volume = 0.3;
+  const enterClick = () => {
     ambient.play();
     setClicked(!clicked)
+  }
+  if(clicked) {
+    setInterval(ambient.play(),120000)
   }
   const openModal = () => {
     const tapBtn = new Audio(Tap);
@@ -30,8 +34,7 @@ const App = () => {
   return (
     <div>
       {clicked ? null :
-    <div className="overlay" onClick={modalClick}>
-      {/* <LogoModal/> */}
+    <div className="overlay" onClick={enterClick}>
       <h1>Tap to Enter.</h1>
     </div>
       }
