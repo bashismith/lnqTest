@@ -9,7 +9,7 @@ const Timer = () => {
     return `0${num}`;
   };
   const timer = () => {
-    const releaseDate = new Date('January 21, 2022 12:08:00').getTime();
+    const releaseDate = new Date('January 21, 2022 12:20:00').getTime();
     const now = new Date().getTime();
     const diff = releaseDate - now;
 
