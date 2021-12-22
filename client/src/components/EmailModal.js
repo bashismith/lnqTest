@@ -49,7 +49,7 @@ const EmailModal = ({setShowModal}) => {
   return(
     <div className='emailDiv'>
       {submitted ?
-       <span className='submitMsg'>Thank You.</span>
+       <span className='submitMsg'>Thank You - Join our community.</span>
       :
       <>
       <h1 className='emailFormTitle'>Join the Waitlist.</h1>

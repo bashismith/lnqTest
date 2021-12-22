@@ -10,17 +10,13 @@ import Ambient from './sound/Ambient.mp3';
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
-  const [data, setData] = useState(null);
   const [clicked, setClicked] = useState(false);
-  const [music, setMusic] = useState(false);
-
-
   const ambient = new Audio(Ambient);
   ambient.volume = 0.3;
   ambient.loop = true;
+
   const enterClick = () => {
     ambient.play();
-    setMusic(true)
     setClicked(!clicked)
   }
   const openModal = () => {
@@ -29,7 +25,6 @@ const App = () => {
     tapBtn.play();
     setShowModal(prev => !prev)
   }
-
   return (
     <div>
       {clicked ? null :
@@ -52,7 +47,6 @@ const App = () => {
       }
       {clicked ?<Footer/> : null }
       </>
-
     </div>
   );
 }

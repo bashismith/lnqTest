@@ -10,7 +10,7 @@ const Timer = () => {
   };
   const timer = () => {
     const now = new Date().getTime();
-    const then = new Date('December 19, 2021 00:00:00').getTime();
+    const then = new Date('December 21, 2021 18:26:00').getTime();
     const difference=(now-then);
 
     const daysLeft = padZero(Math.floor(difference/(60*60*1000*24)*1));
