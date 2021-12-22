@@ -285,11 +285,6 @@ footer {
     margin-top: 70px;
   }
 }
-@media (max-height: 700px) {
-  .timerDiv {
-    margin-top: 80px;
-  }
-}
 @media (max-height: 530px) {
   .tap{
     height: 70px;
@@ -300,7 +295,7 @@ footer {
     margin-top: 40px;
   }
   .count{
-    font-size: 50px;
+    font-size: 70px;
   }
 }
 @media (max-height: 455px) {
