@@ -49,7 +49,7 @@ const EmailModal = ({setShowModal}) => {
 
   return(
     <div className='emailDiv'>
-      {!submitted ?
+      {submitted ?
       <>
        <span className='submitMsg'>Join our community.</span>
        <img src={Arrow} alt='arrow' className='arrow'/>
