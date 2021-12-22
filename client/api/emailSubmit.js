@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
-export default function emailSubmit(req,res) {
+ module.exports = (req,res) => {
   const { email } = req.body;
   mailchimp.setConfig({
     apiKey: process.env.API_KEY,
