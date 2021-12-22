@@ -9,16 +9,19 @@ const Timer = () => {
     return `0${num}`;
   };
   const timer = () => {
+    const releaseDate = new Date('January 22, 2022 00:00:00').getTime();
     const now = new Date().getTime();
-    const then = new Date('December 21, 2021 18:26:00').getTime();
-    const difference=(now-then);
+    const diff = releaseDate - now;
 
-    const daysLeft = padZero(Math.floor(difference/(60*60*1000*24)*1));
-    const hrsLeft = padZero(Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1));
-    const minsLeft = padZero(Math.floor(((difference%(60*60*1000*24))%(60*60*1000))/(60*1000)*1));
-    const secsLeft = padZero(Math.floor((((difference%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1));
+    const sec = 1000;
+    const min = sec * 60;
+    const hour = min * 60;
+    const day = hour * 24;
 
-
+    const daysLeft = padZero(Math.floor(diff / day));
+    const hrsLeft = padZero(Math.floor((diff % day) / hour));
+    const minsLeft = padZero(Math.floor((diff % hour) / min));
+    const secsLeft = padZero(Math.floor((diff % min) / sec));
 
     setCount(`${daysLeft}:${hrsLeft}:${minsLeft}:${secsLeft}`)
   };

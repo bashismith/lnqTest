@@ -1,6 +1,7 @@
 import React, {useState, useRef } from 'react';
 import SignUpTap from '../sound/SignUpTap.mp3';
 import ErrorSound from '../sound/Error.mp3';
+import Arrow from '../images/whiteArrow.png';
 
 
 const EmailModal = ({setShowModal}) => {
@@ -40,7 +41,7 @@ const EmailModal = ({setShowModal}) => {
     emailRef.current.value = '';
 
     setSubmitted(true)
-    setTimeout(()=> setShowModal(prev => !prev), 2000)
+    setTimeout(()=> setShowModal(prev => !prev), 10000)
   }
     const backClick = () => {
       setShowModal(prev => !prev)
@@ -48,8 +49,11 @@ const EmailModal = ({setShowModal}) => {
 
   return(
     <div className='emailDiv'>
-      {submitted ?
-       <span className='submitMsg'>Thank You - Join our community.</span>
+      {!submitted ?
+      <>
+       <span className='submitMsg'>Join our community.</span>
+       <img src={Arrow} alt='arrow' className='arrow'/>
+      </>
       :
       <>
       <h1 className='emailFormTitle'>Join the Waitlist.</h1>
