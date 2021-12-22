@@ -7,6 +7,7 @@ const mailchimp = require("@mailchimp/mailchimp_marketing");
     apiKey: process.env.API_KEY,
     server: "us20"
   })
+  console.log('hello')
   async function run(){
     const response = await mailchimp.ping.get();
     console.log(response)
