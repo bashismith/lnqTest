@@ -45,7 +45,7 @@ const App = () => {
         <div className='timerDiv'>
          <Timer/>
          <div className='wearable'>
-          <span>The Wearable Internet.</span>
+          <span>THE WEARABLE INTERNET.</span>
          </div>
          {clicked ? <img alt='pulseLogo' className='tap'src={logo} onClick={openModal}/> : null}
         </div>
