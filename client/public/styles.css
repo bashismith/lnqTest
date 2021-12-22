@@ -77,14 +77,13 @@ a:hover{
   flex-direction: column;
   place-content: center;
   align-items: center;
-  font-size: 180px;
   line-height: 0.7;
   font-family: "LNQ";
   color: white;
   margin: 23vh 0;
 }
 .count{
-  font-size: 180px;
+  font-size: 170px;
   margin: 0;
   padding: 0;
 }
@@ -284,6 +283,11 @@ footer {
   }
   .wearable {
     margin-top: 70px;
+  }
+}
+@media (max-height: 700px) {
+  .timerDiv {
+    margin-top: 80px;
   }
 }
 @media (max-height: 530px) {
