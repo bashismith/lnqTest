@@ -31,7 +31,7 @@ const Timer = () => {
   },[]);
 
   return (
-    <h2 className="count">{count}</h2>
+    <h2 className="count">{count >= '00:00:00:00' ? count : '00:00:00:00'}</h2>
   )
 }
 
