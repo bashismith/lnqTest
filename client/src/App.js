@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import logo from './images/lnq-bluecircle.png';
 import Tap from './sound/Tap.mp3';
 import Ambient from './sound/Ambient.mp3';
+import adidas from './images/threestripes-horiz.png';
 
 
 const App = () => {
@@ -33,18 +34,13 @@ const App = () => {
     </div>
       }
       <>
-      <Navbar/>
-      {showModal ?
-        <EmailModal setShowModal={setShowModal}/>
-        :
+      {clicked ? <Navbar/> : null }
         <div className='timerDiv'>
-         <Timer/>
          <div className='wearable'>
-          <span>THE WEARABLE INTERNET</span>
+          <span className='spin'></span>
          </div>
-         {clicked ? <img alt='pulseLogo' className='tap'src={logo} onClick={openModal}/> : null}
+         <img src={adidas} className='adidas' />
         </div>
-      }
       {clicked ?<Footer/> : null }
       </>
     </div>

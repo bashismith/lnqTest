@@ -41,6 +41,7 @@ nav {
   justify-content: center;
   align-items: center;
   font-size: 1.8vh;
+  margin-top: 20px
 }
 #lnq {
   grid-area: lnq;
@@ -50,7 +51,7 @@ nav {
   font-size: 60px;
   margin-top: 20px;
 }
-#about {
+/* #about {
   grid-area: about;
   justify-self: center;
   align-self: center;
@@ -61,7 +62,7 @@ nav {
   justify-self: center;
   align-self: center;
   text-decoration: none;
-}
+} */
 a{
   color: #ffffff;
 }
@@ -80,13 +81,48 @@ a:hover{
   line-height: 0.7;
   font-family: "LNQ";
   color: white;
-  margin: 23vh 0;
+  margin-top: 16vh;
 }
 .count{
   font-size: 170px;
   margin: 0;
   padding: 0;
 }
+.adidas{
+  margin-top: 50px;
+}
+.spin:after{
+  content: "LNQ.";
+  animation: spin 4.5s linear forwards;
+  /* animation-iteration-count: 3; */
+  animation-delay: 1.5s;
+}
+
+@keyframes spin{
+  0% { content:"Ambient."; }
+  5% { content:"Innovative."; }
+  10% { content:"Indivdual."; }
+  15% { content:"Inspired."; }
+  20% { content:"Explore."; }
+  25% { content:"Interconnected."; }
+  30% { content:"Aura."; }
+  35% { content:"Active."; }
+  40% { content:"Ownership."; }
+  45% { content:"Connected."; }
+  50% { content: "Interaction."; }
+  55% { content:"Collaborative."; }
+  60% { content: "Access."; }
+  65% { content:"Integrated."; }
+  70% { content: "Metaverse."; }
+  75% { content:"Engaged."; }
+  80% { content: "Gamify."; }
+  85% { content:"Disruptive."; }
+  90% { content: "Wearable."; }
+  100% { content: "adidas X LNQ."; }
+
+}
+
+
 @keyframes pulse {
   0% {
     transform: scale(0.5);
@@ -126,8 +162,8 @@ a:hover{
 }
 .wearable {
   font-size: 28px;
-  margin-top: 80px;
-  margin-bottom: 30px;
+  /* margin-top: 80px; */
+  /* margin-bottom: 30px; */
 }
 .emailSignup {
   display: flex;
@@ -137,7 +173,7 @@ a:hover{
   margin-top: 550px;
 }
 .emailInput {
-  border-radius: 50px;
+  /* border-radius: 50px; */
   height: 30px;
   width: 250px;
   text-align: center;
@@ -149,11 +185,13 @@ a:hover{
   border-style: none;
   margin-bottom: 10px;
   background-color: #0155fd;
+  border-bottom: 3px solid white;
+  margin-right: 3px;
 }
 .emailSubmit {
   border-radius: 50px;
   height: 30px;
-  width: 250px;
+  width: 80px;
   text-align: center;
   color: white;
   font-weight: bold;
