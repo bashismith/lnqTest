@@ -9,7 +9,7 @@ const Football = ({position}) => {
   const footballRef = useRef();
 
   useFrame((state) => {
-    footballRef.current.rotation.y -= 0.02
+    footballRef.current.rotation.x -= 0.02
   //   const t = state.clock.getElapsedTime()
   //   // footballRef.current.rotation.x = THREE.MathUtils.lerp(footballRef.current.rotation.x, Math.cos(t / 2) / 10 + 0.15, 0.1)
   //   footballRef.current.rotation.z = THREE.MathUtils.lerp(footballRef.current.rotation.z, Math.sin(t / 4) / 20, 0.1)
@@ -43,8 +43,8 @@ const Football = ({position}) => {
 const ThreeDFootball = () => {
   return (
     <Canvas className='canvas' camera={{ position: [0, -20, 0], fov: 50 }}>
-    <spotLight position={[10,0,30]} angle={1}/>
-    <directionalLight position={[-5,-25,55]} intensity={1}/>
+    {/* <spotLight position={[10,0,30]} angle={1}/> */}
+    <directionalLight position={[-5,-55,55]} intensity={1}/>
       <Suspense fallback={null}>
         <Football position={[0,0,0]}/>
         {/* <Aura position={[0,1,0]}/> */}

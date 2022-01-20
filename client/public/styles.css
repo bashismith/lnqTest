@@ -34,24 +34,6 @@ body,
   background-color: #0155fd;
   color: white;
 }
-.spin:after {
-  content:"";
-  animation: spin 3.5s linear forwards;
-}
-
-@keyframes spin {
-  0% { content:"Ambient."; }
-  10% { content:"Authentic."; }
-  /* 20% { content:"Inclusive."; } */
-  20% { content:"Individuality."; }
-  30% { content:"Access."; }
-  40% { content: "Interaction."; }
-  50% { content: "Exchange."; }
-  60% { content: "Empathy."; }
-  70% { content: "Innovation."; }
-  80% { content: "LNQ."; }
-  100% {content:"Tap to Enter."}
-}
 
 /* nav bar styles */
 nav {
@@ -65,7 +47,6 @@ nav {
   justify-self: center;
   align-self: center;
   text-decoration: none;
-  color: #0155fd;
   font-size: 60px;
   margin-top: 20px;
 }
@@ -99,10 +80,7 @@ a:hover{
   line-height: 0.7;
   font-family: "LNQ";
   color: white;
-  margin-top: 13vh ;
-}
-.canvas{
-  width: 500px;
+  margin: 23vh 0;
 }
 .count{
   font-size: 170px;
@@ -147,8 +125,7 @@ a:hover{
   margin: 23vh 0;
 }
 .wearable {
-  color: #ffffff;
-  font-size: 100px;
+  font-size: 28px;
   margin-top: 80px;
   margin-bottom: 30px;
 }

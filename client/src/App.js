@@ -3,11 +3,9 @@ import Navbar from './components/Navbar';
 import Timer from './components/Timer';
 import EmailModal from'./components/EmailModal';
 import Footer from './components/Footer';
-import ThreeDFootball from './components/ThreeD';
 import logo from './images/lnq-bluecircle.png';
 import Tap from './sound/Tap.mp3';
 import Ambient from './sound/Ambient.mp3';
-
 
 
 const App = () => {
@@ -31,21 +29,18 @@ const App = () => {
     <div>
       {clicked ? null :
     <div className="overlay" onClick={enterClick}>
-      {/* spin text animation doesnt show text on mobile */}
-      {/* <h1 className="spin"></h1> */}
-      <h1>Tap to Enter.</h1>
+      <h1>Tap to Enter. </h1>
     </div>
       }
       <>
-      {/* <Navbar/> */}
+      <Navbar/>
       {showModal ?
         <EmailModal setShowModal={setShowModal}/>
         :
         <div className='timerDiv'>
-         {/* <Timer/> */}
-         {clicked ?<ThreeDFootball/> : null }
+         <Timer/>
          <div className='wearable'>
-          <span>OUR METAVERSE</span>
+          <span>THE WEARABLE INTERNET</span>
          </div>
          {clicked ? <img alt='pulseLogo' className='tap'src={logo} onClick={openModal}/> : null}
         </div>
