@@ -17,6 +17,7 @@ body,
   background-color: #0155fd;
   font-family: LNQ;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* start modal style */
@@ -41,177 +42,7 @@ nav {
   justify-content: center;
   align-items: center;
   font-size: 1.8vh;
-}
-#lnq {
-  grid-area: lnq;
-  justify-self: center;
-  align-self: center;
-  text-decoration: none;
-  font-size: 60px;
-  margin-top: 20px;
-}
-#about {
-  grid-area: about;
-  justify-self: center;
-  align-self: center;
-  text-decoration: none;
-}
-#slabsNav {
-  grid-area: slabsNav;
-  justify-self: center;
-  align-self: center;
-  text-decoration: none;
-}
-a{
-  color: #ffffff;
-}
-a:hover{
-  color:rgb(204, 204, 204);
-}
-
-/* timer page styles */
-.timerDiv {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  place-content: center;
-  align-items: center;
-  line-height: 0.7;
-  font-family: "LNQ";
-  color: white;
-  margin: 23vh 0;
-}
-.count{
-  font-size: 170px;
-  margin: 0;
-  padding: 0;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(0.5);
-		box-shadow: 0 0 0 0 rgb(204, 204, 204);
-	}
-
-	70% {
-    transform: scale(0.6);
-		box-shadow: 0 0 0 60px rgba(89, 123, 175, 0);
-	}
-
-	100% {
-    transform: scale(0.5);
-		box-shadow: 0 0 0 0 rgba(63, 62, 153, 0);
-	}
-}
-.tap {
-  animation: pulse 3s infinite;
-  background-color: #0155fd;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-}
-
-
-/* join waitlist styles */
-.emailDiv {
-  display: flex;
-  flex-direction: column;
-  place-content: center;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  font-family: "LNQ";
-  color: white;
-  margin: 23vh 0;
-}
-.wearable {
-  font-size: 28px;
-  margin-top: 80px;
-  margin-bottom: 30px;
-}
-.emailSignup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-self: center;
-  margin-top: 550px;
-}
-.emailInput {
-  border-radius: 50px;
-  height: 30px;
-  width: 250px;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 0;
-  border-color: transparent;
-  outline: none;
-  border-style: none;
-  margin-bottom: 10px;
-  background-color: #0155fd;
-}
-.emailSubmit {
-  border-radius: 50px;
-  height: 30px;
-  width: 250px;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  background-color: #0155fd;
-  border-style: none;
-  border: 1px solid white;
-}
-.emailSubmit:hover{
-  background-color:rgb(204, 204, 204);
-}
-::placeholder{
-  color: white;
-  font-weight: bold;
-}
-.emailFormTitle{
-  color: white;
-  font-size: 35px;
-  margin: 20px 0;
-}
-.backBtn{
-  font-size: 15px;
-  margin: 20px;
-}
-.backBtn:hover {
-  color:rgb(204, 204, 204);
-  cursor: pointer;
-}
-.submitMsg {
-  font-size: 32px;
-  margin-top: 70px;
-}
-@-webkit-keyframes mover {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-20px); }
-}
-@keyframes mover {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-20px); }
-}
-.arrow{
-  height: 100px;
-  width: 80px;
-  margin-top: 80px;
-  -webkit-animation: mover 2s infinite alternate;
-  animation: mover 1s infinite alternate;
-
-}
-
-/* footer styles */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
+  margin-top: 20px
 }
 .insta {
   filter: invert(100%) sepia(0%) saturate(7451%) hue-rotate(91deg) brightness(110%) contrast(112%);
@@ -227,252 +58,92 @@ footer {
   filter: brightness(0) saturate(100%) invert(81%) sepia(0%) saturate(13%) hue-rotate(97deg) brightness(102%) contrast(97%);
 }
 
+
+/* three stripes page styles */
+.threeStripes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  align-items: center;
+  line-height: 0.7;
+  font-family: "LNQ";
+  color: white;
+  margin: 22vh 0;
+}
+.adidas{
+  /* padding-bottom: 800px; */
+  /* height: 300px; */
+  /* width: 100%; */
+}
+.spin {
+  margin-bottom: 5vh;
+}
+
+/* email form styles */
+.emailInput {
+  height: 30px;
+  width: 250px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0;
+  border-color: transparent;
+  outline: none;
+  border-style: none;
+  margin-bottom: 10px;
+  background-color: #0155fd;
+  /* border-bottom: 3px solid white; */
+  margin-right: 3px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: 0;
+}
+.emailSubmit {
+  border-radius: 50px;
+  height: 30px;
+  width: 80px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: #0155fd;
+  border-style: none;
+  border: 1px solid white;
+}
+.emailSubmit:hover{
+  background-color:rgb(204, 204, 204);
+}
+::placeholder{
+  color: white;
+  font-weight: bold;
+}
+.submitMsg {
+  font-size: 22px;
+  color: white;
+}
+
+/* footer styles */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+.signUpDiv{
+  display: flex;
+  justify-content: center;
+}
+
+
 /* media queries */
-@media (max-width:321px) {
-  .count{
-    font-size: 50px;
-  }
-  .wearable {
-    font-size: 15px;
-    margin-top: 40px;
-  }
-  #lnq {
-    font-size: 30px;
-  }
-  .submitMsg {
-    font-size: 25px;
-    margin-top: 80px;
-  }
-  .arrow{
-    height: 60px;
-    width: 50px;
-  }
-}
-@media (max-width:376px) and (min-width: 321px) {
-  .count{
-    font-size: 60px;
-  }
-  .wearable {
-    font-size: 15px;
-    margin-top: 50px;
-  }
-  #lnq {
-    font-size: 40px;
-  }
-  .submitMsg {
-    font-size: 25px;
-    margin-top: 80px;
-  }
-  .arrow{
-    height: 70px;
-    width: 55px;
-  }
-}
-@media (max-width:442px) and (min-width: 376px) {
-  .count{
-    font-size: 65px;
-  }
-  .wearable {
-    font-size: 20px;
-    margin-top: 60px;
-  }
-  .arrow{
-    height: 80px;
-    width: 60px;
-  }
-}
-@media (max-width:769px) and (min-width: 442px) {
-  .count{
-    font-size: 78px;
-  }
-  .wearable {
-    margin-top: 70px;
-  }
-    .arrow{
-    height: 80px;
-    width: 60px;
-  }
-}
-@media (max-width:1025px) and (min-width: 769px) {
-  .count{
-    font-size: 110px;
-  }
-  .wearable {
-    margin-top: 70px;
-  }
-}
-
 /* landscape */
-@media (max-height: 530px) {
-  .tap{
-    height: 70px;
-    width: 70px;
-  }
-  .wearable {
-    font-size: 15px;
-    margin-top: 40px;
-  }
-  .count{
-    font-size: 70px;
-  }
-}
-@media (max-height: 544px) {
-  .arrow{
-    height: 60px;
-    width: 50px;
-    margin-top: 50px;
-  }
-}
-
-@media (max-height: 455px) {
-  .tap{
-    height: 50px;
-    width: 50px;
-  }
-  .wearable {
-    font-size: 15px;
-    margin-top: 30px;
-  }
-}
-@media (max-height: 425px) {
-  .tap{
-    height: 40px;
-    width: 40px;
-  }
-  .wearable {
-    font-size: 15px;
-    margin-top: 30px;
-  }
-  .timerDiv {
-    margin: 50px 0;
-  }
-  .emailFormTitle{
-    font-size: 30px;
-    margin: 10px 0;
-  }
-  .emailDiv{
-    margin: 80px 0;
-  }
-}
-
-@media (max-height: 365px) {
-  .wearable {
-    font-size: 15px;
-    margin-top: 30px;
-  }
-  .timerDiv {
-    margin: 30px 0;
-  }
-  #lnq{
-    font-size: 30px;
-    margin: 10px;
-  }
-  @keyframes pulse {
-    0% {
-      transform: scale(0.5);
-      box-shadow: 0 0 0 0 rgb(144, 144, 146);
-    }
-
-    70% {
-      transform: scale(0.6);
-      box-shadow: 0 0 0 30px rgba(89, 123, 175, 0);
-    }
-
-    100% {
-      transform: scale(0.5);
-      box-shadow: 0 0 0 0 rgba(63, 62, 153, 0);
-    }
-  }
-  .emailFormTitle{
-    font-size: 25px;
-    margin: 10px 0;
-  }
-  .emailDiv{
-    margin: 40px 0;
-  }
-}
-@media (max-height: 320px) {
-  .emailFormTitle{
-    font-size: 25px;
-    margin: 10px 0;
-  }
-  .emailDiv{
-    margin: 25px 0;
-  }
-}
-@media (max-height: 290px) {
-  .wearable {
-    font-size: 15px;
-    margin-top: 20px;
-  }
-  .timerDiv {
-    margin: 20px 0;
-  }
-  #lnq{
-    font-size: 20px;
-    margin: 10px;
-  }
-  @keyframes pulse {
-    0% {
-      transform: scale(0.5);
-      box-shadow: 0 0 0 0 rgb(144, 144, 146);
-    }
-
-    70% {
-      transform: scale(0.6);
-      box-shadow: 0 0 0 20px rgba(89, 123, 175, 0);
-    }
-
-    100% {
-      transform: scale(0.5);
-      box-shadow: 0 0 0 0 rgba(63, 62, 153, 0);
-    }
-  }
-  .emailFormTitle{
-    font-size: 20px;
-    margin: 10px 0;
-  }
-  .emailDiv{
-    margin: 0px 0;
-  }
-}
-@media (max-height: 258px) {
-  .wearable {
-    font-size: 15px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  .timerDiv {
-    margin: 20px 0;
-  }
-  #lnq{
-    font-size: 20px;
-    margin: 10px;
-  }
-  @keyframes pulse {
-    0% {
-      transform: scale(0.5);
-      box-shadow: 0 0 0 0 rgb(144, 144, 146);
-    }
-
-    70% {
-      transform: scale(0.6);
-      box-shadow: 0 0 0 20px rgba(89, 123, 175, 0);
-    }
-
-    100% {
-      transform: scale(0.5);
-      box-shadow: 0 0 0 0 rgba(63, 62, 153, 0);
-    }
-  }
-}
-@media (max-height: 492px){
-  .submitMsg {
-    font-size: 25px;
-    margin-top: 20px;
-  }
-  .arrow{
-    height: 50px;
-    width: 40px;
+@media (max-height: 693px) {
+  .adidas{
+    height: 280px;
   }
 }

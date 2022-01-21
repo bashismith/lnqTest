@@ -1,19 +1,59 @@
-import React from 'react';
-import discord from '../images/discord-logo.svg';
-import twitter from '../images/twitter-logo.svg';
-import insta from '../images/instagram-logo.svg';
+import React, {useState, useRef } from 'react';
+import SignUpTap from '../sound/SignUpTap.mp3';
+import ErrorSound from '../sound/Error.mp3';
 
 
 
 const Footer = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const emailRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const userEmail = emailRef.current.value
+    const regexFormat = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+
+    const errSound = new Audio(ErrorSound);
+    errSound.volume = 0.5;
+
+    if (userEmail === '' || !regexFormat.test(userEmail)) {
+      errSound.play();
+      return
+    }
+
+    fetch('/api/emailSubmit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: userEmail,
+      }),
+    })
+    .then((data) => JSON.stringify(data))
+    .then((data)=> console.log(data))
+    console.log(userEmail)
+
+    const tapBtn = new Audio(SignUpTap);
+    tapBtn.volume = 0.5;
+    tapBtn.play();
+
+    emailRef.current.value = '';
+
+    setSubmitted(true)
+    setTimeout(()=> setSubmitted(false), 7000)
+  }
   return (
-    <div>
-      <footer>
-      <a href="https://discord.gg/lnq" target="_blank" alt='discord' rel="noreferrer" className='discord'><img src={discord}/></a>
-      <a href="https://www.instagram.com/lnq.io/" alt='instagram' target="_blank" rel="noreferrer" className='insta'><img src={insta}/></a>
-      <a href="https://twitter.com/lnq_io" target="_blank" alt='twitter' rel="noreferrer" className="twitter"><img src={twitter} height='16px'/></a>
+    <footer>
+      {submitted ?
+        <p className='submitMsg'>Thank You.</p>
+        :
+        <form className='emailForm' onSubmit={handleSubmit} >
+          <input ref={emailRef}  className='emailInput' placeholder='Enter your email.' autoComplete="off"></input>
+          <div className="signUpDiv">
+           <input className='emailSubmit' type="Submit" value="Sign Up"></input>
+          </div>
+        </form>
+      }
     </footer>
-    </div>
   )
 };
 
