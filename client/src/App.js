@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import logo from './images/lnq-bluecircle.png';
 import Tap from './sound/Tap.mp3';
 import Ambient from './sound/Ambient.mp3';
-import adidas from './images/threestripes-horiz.png';
 
 
 const App = () => {
@@ -30,17 +29,22 @@ const App = () => {
     <div>
       {clicked ? null :
     <div className="overlay" onClick={enterClick}>
-      <h1>Tap to Enter. </h1>
+      <h1>Tap to Enter.</h1>
     </div>
       }
       <>
-      {clicked ? <Navbar/> : null }
+      <Navbar/>
+      {showModal ?
+        <EmailModal setShowModal={setShowModal}/>
+        :
         <div className='timerDiv'>
+         <Timer/>
          <div className='wearable'>
-          <span className='spin'></span>
+          <span>THE WEARABLE INTERNET</span>
          </div>
-         <img src={adidas} className='adidas' />
+         {clicked ? <img alt='pulseLogo' className='tap'src={logo} onClick={openModal}/> : null}
         </div>
+      }
       {clicked ?<Footer/> : null }
       </>
     </div>
