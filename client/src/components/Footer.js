@@ -11,7 +11,8 @@ const Footer = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const userEmail = emailRef.current.value
-    const regexFormat = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    const regexFormat = /[a-zA-Z0-9._%+-]+@[a-zA_Z0-9.-]+\.[a-zA_Z]{2,4}$/;
+
 
     const errSound = new Audio(ErrorSound);
     errSound.volume = 0.5;
