@@ -48,7 +48,7 @@ const App = () => {
       'Culture',
       'Adidas x sLABS'
     ];
-    if(wordArr[num]) setWord(wordArr[num])
+    if(wordArr[num]) setWord(wordArr[num].toUpperCase())
   }
 
   useEffect(()=> {
