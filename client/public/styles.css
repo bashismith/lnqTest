@@ -144,6 +144,6 @@ footer {
 /* landscape */
 @media (max-height: 693px) {
   .adidas{
-    height: 280px;
+    height: 200px;
   }
 }
