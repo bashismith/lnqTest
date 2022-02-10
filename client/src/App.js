@@ -3,18 +3,24 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Ambient from './sound/Ambient.mp3';
 import gif from './images/alpha11.gif';
+import InterviewVideo from './components/InterviewVideo';
+
 
 
 const App = () => {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState(0);
   const [word, setWord] = useState("LNQ.");
   const [count, setCount ] = useState(0);
   const ambient = new Audio(Ambient);
   ambient.volume = 0.3;
   ambient.loop = true;
   const enterClick = () => {
+    if(clicked === 0){
+      setClicked(1)
+      return
+    }
+    setTimeout(() => setClicked(2), 500)
     ambient.play();
-    setClicked(!clicked)
   }
 
   const cycleWords = (num) => {
@@ -48,11 +54,11 @@ const App = () => {
       'Culture',
       'Adidas x sLABS'
     ];
-    if(wordArr[num]) setWord(wordArr[num].toUpperCase())
+    if(wordArr[num]) setWord(wordArr[num])
   }
 
   useEffect(()=> {
-    if(clicked) {
+    if(clicked === 2) {
       setTimeout(() => cycleWords(count), 500)
       setCount((prev) => prev+=1)
     }
@@ -60,7 +66,7 @@ const App = () => {
 
   return (
     <div>
-      {clicked ?
+     {clicked === 2 ?
       <>
         <Navbar/>
         <div className='threeStripes'>
@@ -70,9 +76,11 @@ const App = () => {
         <Footer/>
       </>
       :
-      <div className="overlay" onClick={enterClick}>
-        <h1>Tap to Enter. </h1>
-      </div>
+      <>
+        <input id="button" type="checkbox" onClick={enterClick}></input>
+        {clicked > 0 ? null : <label htmlFor="button">Tap to Enter.</label> }
+        <InterviewVideo/>
+      </>
       }
     </div>
   );

@@ -3,7 +3,7 @@
   font-family: "LNQ";
   src: url("/LNQ.woff") format('woff');
 }
-*{
+ *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -20,8 +20,88 @@ body,
   overflow-x: hidden;
 }
 
+/* interview embed modal */
+.modal {
+  background: white;
+  height: 1px;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease 0.5s, height 0.5s ease;
+  width: 0;
+}
+.content {
+  color: #0155fd;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translate3d(0, -50%, 0);
+  transition: color 0.5s ease;
+  width: 100%;
+}
+label {
+  color: white;
+  cursor: pointer;
+  font-size: 2em;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: color 0.5s ease 0.5s;
+}
+input {
+  cursor: pointer;
+  height: 0;
+  /* opacity: 0; */
+  width: 0;
+}
+
+input:focus {
+  outline: none;
+}
+input:checked {
+  height: 40px;
+  opacity: 1;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+  -webkit-appearance: none;
+  width: 40px;
+}
+input:checked::after, input:checked:before {
+  border-top: 3px solid #0155fd;
+  border-radius: 10px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 100%;
+}
+input:checked::after {
+  transform: rotate(-45deg);
+}
+input:checked + label {
+  color: #fff;
+  transition: color 0.5s ease;
+}
+input:checked ~ .modal {
+  height: 100%;
+  width: 100%;
+  transition: width 0.5s ease, height 0.5s ease 0.5s;
+}
+input:checked ~ .modal .content {
+  color: #fff;
+  transition: color 0.5s ease 0.5s;
+}
+
 /* start modal style */
 .overlay {
+  cursor: pointer;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -71,11 +151,6 @@ nav {
   font-family: "LNQ";
   color: white;
   margin: 22vh 0;
-}
-.adidas{
-  /* padding-bottom: 800px; */
-  /* height: 300px; */
-  /* width: 100%; */
 }
 .spin {
   margin-bottom: 5vh;
@@ -144,6 +219,22 @@ footer {
 /* landscape */
 @media (max-height: 693px) {
   .adidas{
+    height: 280px;
+  }
+}
+@media (max-width: 395px) {
+  label{
+    font-size: 1.55rem;
+  }
+  iframe {
+    width: 300px;
     height: 200px;
   }
 }
+@media (max-width: 655px) and (min-width: 396px){
+  iframe {
+    width: 380px;
+    height: 300px;
+  }
+}
+/* shrink video content after like 800 width */
