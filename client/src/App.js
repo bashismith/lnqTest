@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Ambient from './sound/Ambient.mp3';
-import gif from './images/alpha11.gif';
 import InterviewVideo from './components/InterviewVideo';
+import Ambient from './sound/Ambient.mp3';
+
 
 
 
 const App = () => {
   const [clicked, setClicked] = useState(0);
   const [word, setWord] = useState("LNQ.");
-  const [count, setCount ] = useState(0);
+  const [count, setCount ] = useState(false);
   const ambient = new Audio(Ambient);
   ambient.volume = 0.3;
   ambient.loop = true;
   const enterClick = () => {
-    if(clicked === 0){
-      setClicked(1)
-      return
-    }
-    setTimeout(() => setClicked(2), 500)
+      setClicked(true)
     ambient.play();
   }
 
@@ -66,20 +62,17 @@ const App = () => {
 
   return (
     <div>
-     {clicked === 2 ?
+     {clicked?
       <>
-        <Navbar/>
         <div className='threeStripes'>
-          <h1 className='spin'>{word}</h1>
-         <img src={gif} alt='three-stripes' className='adidas' />
+        <h1 className='spin'>LNQ</h1>
+        <Navbar/>
+         <h1 className="join">JOIN THE COMMUNITY</h1>
         </div>
-        <Footer/>
       </>
       :
       <>
-        <input id="button" type="checkbox" onClick={enterClick}></input>
-        {clicked > 0 ? null : <label htmlFor="button">Tap to Enter.</label> }
-        <InterviewVideo/>
+        <label className="label" onClick={enterClick}>Tap to Enter.</label>
       </>
       }
     </div>
