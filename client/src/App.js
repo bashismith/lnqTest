@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import InterviewVideo from './components/InterviewVideo';
@@ -11,6 +11,7 @@ const App = () => {
   const [clicked, setClicked] = useState(0);
   const [word, setWord] = useState("LNQ.");
   const [count, setCount ] = useState(false);
+  const redirectRef = useRef()
   const ambient = new Audio(Ambient);
   ambient.volume = 0.3;
   ambient.loop = true;
@@ -52,13 +53,10 @@ const App = () => {
     ];
     if(wordArr[num]) setWord(wordArr[num])
   }
-
+  const password = process.env.PROTECTED
   useEffect(()=> {
-    if(clicked === 2) {
-      setTimeout(() => cycleWords(count), 500)
-      setCount((prev) => prev+=1)
-    }
-  },[word, clicked])
+    redirectRef.current.click()
+  },[])
 
   return (
     <div>
@@ -72,7 +70,10 @@ const App = () => {
       </>
       :
       <>
-        <label className="label" onClick={enterClick}>Tap to Enter.</label>
+        {/* <label className="label" onClick={enterClick}>Tap to Enter.</label> */}
+        <a ref={redirectRef} href="https://lnq.splashthat.com/">
+         <label className="label">loading...</label>
+        </a>
       </>
       }
     </div>
