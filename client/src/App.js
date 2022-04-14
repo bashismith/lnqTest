@@ -55,7 +55,7 @@ const App = () => {
   }
   const password = process.env.PROTECTED
   useEffect(()=> {
-    redirectRef.current.click()
+    setTimeout(() => redirectRef.current.click(),500)
   },[])
 
   return (
