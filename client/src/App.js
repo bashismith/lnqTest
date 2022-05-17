@@ -1,83 +1,66 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import InterviewVideo from './components/InterviewVideo';
-import Ambient from './sound/Ambient.mp3';
-
-
-
+import React, { useState, useEffect, useRef } from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import InterviewVideo from "./components/InterviewVideo";
+import Error from "./sound/Error.mp3";
 
 const App = () => {
-  const [clicked, setClicked] = useState(0);
-  const [word, setWord] = useState("LNQ.");
-  const [count, setCount ] = useState(false);
-  const redirectRef = useRef()
-  const ambient = new Audio(Ambient);
-  ambient.volume = 0.3;
-  ambient.loop = true;
-  const enterClick = () => {
-      setClicked(true)
-    ambient.play();
-  }
+  const [clicked, setClicked] = useState(false);
+  const [apiRes, setApiRes] = useState()
+  const userPswd = useRef();
+  const redirectRef = useRef();
+  const error = new Audio(Error);
+  error.volume = 0.3;
+  const password = process.env.PROTECTED;
 
-  const cycleWords = (num) => {
-    const wordArr = [
-      'Ambient',
-      'Connected',
-      'Integrated',
-      'Engaging',
-      'Active',
-      'Inspiring',
-      'Interactive',
-      'Playful',
-      'Disruptive',
-      'Creative',
-      'Explore',
-      'Access',
-      'Ownership',
-      'Youthful',
-      'Utility',
-      'Experience',
-      'Authenticate',
-      'Exchange',
-      'Innovate',
-      'Flow',
-      'Curiosity',
-      'Impactful',
-      'Subtle',
-      'Organic',
-      'Secure',
-      'Powerful',
-      'Culture',
-      'Adidas x sLABS'
-    ];
-    if(wordArr[num]) setWord(wordArr[num])
-  }
-  const password = process.env.PROTECTED
-  useEffect(()=> {
-    setTimeout(() => redirectRef.current.click(),500)
-  },[])
+  const enterClick = (e) => {
+    e.preventDefault();
+    const userInput = userPswd.current.value;
+
+    // fetch('/api/emailSubmit', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     password: userInput,
+    //   }),
+    // })
+    // .then((data) => {
+    //   console.log(data)
+    // })
+    // .then((res) => setApiRes(res))
+
+    if (userInput === Footer) {
+      setClicked(true)
+      setTimeout(() =>redirectRef.current.click(), 500);
+    } else {
+      userPswd.current.value = ''
+      error.play()
+      return
+    }
+  };
 
   return (
     <div>
-     {clicked?
-      <>
-        <div className='threeStripes'>
-        <h1 className='spin'>LNQ</h1>
-        <Navbar/>
-         <h1 className="join">JOIN THE COMMUNITY</h1>
-        </div>
-      </>
+      {clicked ?
+      <a ref={redirectRef} href='https://lnq.splashthat.com/'>
+        <label className="labelTwo">loading...</label>
+      </a>
       :
-      <>
-        {/* <label className="label" onClick={enterClick}>Tap to Enter.</label> */}
-        <a ref={redirectRef} href="https://lnq.splashthat.com/">
-         <label className="label">loading...</label>
-        </a>
-      </>
+      <div className="passwordProtect">
+        <label className="label">LNQ</label>
+        <form className="passwordForm" onSubmit={enterClick}>
+          <input
+            className="passwordInput"
+            placeholder="Enter Password"
+            autoComplete="off"
+            ref={userPswd}
+          ></input>
+          <input className="emailSubmit" type="Submit"></input>
+        </form>
+      </div>
       }
     </div>
   );
-}
+};
 
 export default App;

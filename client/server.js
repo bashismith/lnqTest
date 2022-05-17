@@ -14,34 +14,48 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+require('dotenv').config();
+
 
 
 app.post('/api/emailSubmit', async (req,res) => {
-    const { email } = req.body;
+    // const { email } = req.body;
 
-    mailchimp.setConfig({
-      apiKey: process.env.API_KEY,
-      server: "us20"
-    })
+    // mailchimp.setConfig({
+    //   apiKey: process.env.API_KEY,
+    //   server: "us20"
+    // })
 
-    //health check
-    async function run(){
-      const response = await mailchimp.ping.get();
-      console.log(response)
-    }
-    run()
+    // //health check
+    // async function run(){
+    //   const response = await mailchimp.ping.get();
+    //   console.log(response)
+    // }
+    // run()
 
+    // try{
+    //   const response = await mailchimp.lists.addListMember("ac3bfabd1e", {
+    //       email_address: email,
+    //       status: "subscribed",
+    //     });
+    //     console.log(JSON.stringify(response))
+    //     res.status(200).json(response)
+    // }catch(err){
+    //   console.log(JSON.stringify(err))
+    //   res.status(400).json(err)
+    // }
+    const { password } = req.body;
     try{
-      const response = await mailchimp.lists.addListMember("ac3bfabd1e", {
-          email_address: email,
-          status: "subscribed",
-        });
-        console.log(JSON.stringify(response))
-        res.status(200).json(response)
+      if(password === process.env.API_KEY){
+        res.status(200).send(true)
+      }
+      return false
+
     }catch(err){
-      console.log(JSON.stringify(err))
-      res.status(400).json(err)
+      console.log(process.env.API_KEY)
+      res.status(400).send(false)
     }
+
 });
 
 

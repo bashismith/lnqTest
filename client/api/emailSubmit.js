@@ -1,20 +1,16 @@
 require('dotenv').config();
-const mailchimp = require("@mailchimp/mailchimp_marketing");
 
  module.exports = async (req,res) => {
-  const { email } = req.body;
-  mailchimp.setConfig({
-    apiKey: process.env.API_KEY,
-    server: "us20"
-  })
+  const { password } = req.body;
   try{
-    const response = await mailchimp.lists.addListMember("ac3bfabd1e", {
-        email_address: email,
-        status: "subscribed",
-      });
-      res.status(200).json(response)
+    if(password === process.env.API_KEY){
+      res.status(200).send(true)
+    }
+    return false
+
   }catch(err){
-    res.status(400).json(err)
+    console.log(process.env.API_KEY)
+    // res.status(400).json(err)
   }
 
 }

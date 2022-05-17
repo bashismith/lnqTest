@@ -23,11 +23,62 @@ body,
   color: white;
   cursor: pointer;
   font-size: 2em;
+}
+::placeholder{
+  color: white;
+  font-weight: bold;
+}
+.passwordProtect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 50%;
+  margin-top: 40vh;
+}
+.passwordInput {
+  margin-top: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0;
+  border-color: transparent;
+  outline: none;
+  border-style: none;
+  background-color: #0155fd;
+  border-bottom: 3px solid white;
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: 0;
+}
+.emailSubmit {
+  border-radius: 50px;
+  height: 30px;
+  width: 80px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: #0155fd;
+  border-style: none;
+  border: 1px solid white;
+  margin-top: 10px;
+}
+.emailSubmit:hover{
+  background-color:rgb(204, 204, 204);
+}
+.passwordForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.labelTwo{
+  color: white;
+  cursor: pointer;
+  font-size: 2em;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: color 0.5s ease 0.5s;
 }
 
 .insta {
