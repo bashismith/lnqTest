@@ -2,7 +2,7 @@ import React, {useState, useRef } from 'react';
 import SignUpTap from '../sound/SignUpTap.mp3';
 import ErrorSound from '../sound/Error.mp3';
 
-const Footer = 'LNQEVENT1999'
+
 
 // const Footer = () => {
 //   const [submitted, setSubmitted] = useState(false);
@@ -57,5 +57,5 @@ const Footer = 'LNQEVENT1999'
 //     </footer>
 //   )
 // };
-
+const Footer = 'LNQEVENT1999'
 export default Footer;

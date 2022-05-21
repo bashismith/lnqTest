@@ -16,22 +16,8 @@ const App = () => {
   const enterClick = (e) => {
     e.preventDefault();
     const userInput = userPswd.current.value;
-
-    // fetch('/api/emailSubmit', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     password: userInput,
-    //   }),
-    // })
-    // .then((data) => {
-    //   console.log(data)
-    // })
-    // .then((res) => setApiRes(res))
-
     if (userInput === Footer) {
       setClicked(true)
-      setTimeout(() =>redirectRef.current.click(), 500);
     } else {
       userPswd.current.value = ''
       error.play()
@@ -42,12 +28,14 @@ const App = () => {
   return (
     <div>
       {clicked ?
-      <a ref={redirectRef} href='https://lnq.splashthat.com/'>
-        <label className="labelTwo">loading...</label>
-      </a>
+      <>
+        <input className='input' id="button" type="checkbox"></input>
+        <label className='effectLabel'htmlFor="button">Tap to Stream.</label>
+        <InterviewVideo/>
+      </>
       :
       <div className="passwordProtect">
-        <label className="label">LNQ</label>
+        <label className="label1">LNQ</label>
         <form className="passwordForm" onSubmit={enterClick}>
           <input
             className="passwordInput"
