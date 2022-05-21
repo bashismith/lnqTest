@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div>
-      {!clicked ?
+      {clicked ?
       <>
         <input className='input' id="button" type="checkbox"></input>
         <label className='effectLabel'htmlFor="button">Tap to Stream.</label>
