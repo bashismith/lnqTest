@@ -32,7 +32,6 @@ body,
 .input {
   cursor: pointer;
   height: 0;
-  /* opacity: 0; */
   width: 0;
 }
 
@@ -232,6 +231,18 @@ nav {
 
 
 /* media queries */
+@media (max-width: 395px) {
+  iframe {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media (max-width: 655px) and (min-width: 396px){
+  iframe {
+    width: 380px;
+    height: 300px;
+  }
+}
 @media screen and (max-width: 463px){
   .spin{
     font-size: 70px;
